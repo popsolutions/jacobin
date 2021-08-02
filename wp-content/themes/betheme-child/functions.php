@@ -1054,8 +1054,11 @@ function my_custom_checkout_field_display_admin_order_meta($order){
 
 // code to add to posts// the content - Adiciona banner aos posts
 function prefix_insert_post_ads( $content ) {
-    $banner_url = 'https://veneta.com.br/produto/pre-venda-delivery-fight-a-luta-contra-os-patroes-sem-rosto/';
-    $banner_img = 'https://jacobin.com.br/wp-content/uploads/2020/10/banner_jacobin_brasil.jpeg';
+    //$banner_url = 'https://veneta.com.br/produto/pre-venda-delivery-fight-a-luta-contra-os-patroes-sem-rosto/';
+    //$banner_img = 'https://jacobin.com.br/wp-content/uploads/2020/10/banner_jacobin_brasil.jpeg';
+	
+	$banner_url = 'https://www.youtube.com/playlist?list=PLcxSqcuM3dwNetKgQREO_lwNA8bXCnArR';
+    $banner_img = 'https://jacobin.com.br/wp-content/uploads/2021/07/socializando.jpg';
 
     $ad_code = '<div class="cupom"><a href="'.$banner_url.'" target="_blank"><img src="'.$banner_img.'"/></a></div>';
     
