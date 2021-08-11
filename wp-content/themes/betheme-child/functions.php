@@ -1057,8 +1057,8 @@ function prefix_insert_post_ads( $content ) {
     //$banner_url = 'https://veneta.com.br/produto/pre-venda-delivery-fight-a-luta-contra-os-patroes-sem-rosto/';
     //$banner_img = 'https://jacobin.com.br/wp-content/uploads/2020/10/banner_jacobin_brasil.jpeg';
 	
-	$banner_url = 'https://jacobin.com.br/produto-tag/colecao-jacobina/';
-    $banner_img = 'https://jacobin.com.br/wp-content/uploads/2021/07/assinantes-desconto.jpg';
+	$banner_url = 'https://caixadeferramentas.org';
+    $banner_img = 'https://jacobin.com.br/wp-content/uploads/2021/08/banner-caixa-ago21.jpg';
 
     $ad_code = '<div class="cupom"><a href="'.$banner_url.'" target="_blank"><img src="'.$banner_img.'"/></a></div>';
     
