@@ -579,12 +579,13 @@ add_action('wp_head', 'wppop_add_javascript');
 /* --------------------------------------------------
 * Remover zoom das imagens do woocommerce
 * --------------------------------------------------- */
+/*
 function remove_image_zoom_support() {
     remove_theme_support( 'wc-product-gallery-zoom' );
     remove_theme_support( 'wc-product-gallery-lightbox' );
 }
 add_action( 'wp', 'remove_image_zoom_support', 20 );
-
+*/
 
 function wppop_add_facebook_image_to_home(){
     if(is_home()){
@@ -923,7 +924,7 @@ function add_notes_compra(){
     echo '<p style="width: 100%;">Prazo de ENVIO 2 a 6 semanas a partir do pagamento</p><br/>';
 }
 
-add_action('woocommerce_review_order_before_submit', add_notes_compra, 10, 0);
+add_action('woocommerce_review_order_before_submit', 'add_notes_compra', 10, 0);
 
 // renae order status
 add_filter( 'wc_order_statuses', 'wc_renaming_order_status' );
@@ -1057,7 +1058,7 @@ function prefix_insert_post_ads( $content ) {
     //$banner_url = 'https://veneta.com.br/produto/pre-venda-delivery-fight-a-luta-contra-os-patroes-sem-rosto/';
     //$banner_img = 'https://jacobin.com.br/wp-content/uploads/2020/10/banner_jacobin_brasil.jpeg';
 	
-	$banner_url = 'loja.editoraruadosabao.com.br';
+	$banner_url = 'https://www.amazon.com.br/gp/product/6586460301';
     $banner_img = 'https://jacobin.com.br/wp-content/uploads/2021/10/algoritmos-da-opressao.jpg';
 
     $ad_code = '<div class="cupom"><a href="'.$banner_url.'" target="_blank"><img src="'.$banner_img.'"/></a></div>';
