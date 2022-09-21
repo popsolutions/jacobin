@@ -1,0 +1,40 @@
+/* CSS a unir al final del proyecto. Usado por sdobke */
+/*
+.woocommerce ul.products li.product a img{width:40%}
+.woocommerce ul.products li.product .price{color:red;font-size:23px;font-family:"Hurme-No3",sans-serif!important}
+.woocommerce ul.products li.product .onsale{right:initial;left:0}
+h2.woocommerce-loop-product__title{font-size:23px!important}
+.woocommerce form .form-row label{font-family:"Hurme-No3",sans-serif!important}
+.woocommerce form .form-row input.input-text,.woocommerce form .form-row textarea{border:solid 1px #999}
+.woocommerce form .form-row input.input-text,.woocommerce form .form-row textarea{border:solid 1px #999}
+.woocommerce table.shop_table th,.woocommerce table.shop_table td{font-family:"Hurme-No3",sans-serif!important}
+.woocommerce .products ul,.woocommerce ul.products{width:50%;margin:120px auto}
+.woocommerce ul.products li.product,.woocommerce-page ul.products li.product{width:45%}
+*/
+
+
+.woocommerce ul.products li.product a img{width:40%}
+.woocommerce ul.products li.product .price{color:red;font-size:23px;font-family:"Hurme-No3",sans-serif!important}
+.woocommerce ul.products li.product .onsale{right:initial;left:0}
+h2.woocommerce-loop-product__title{font-size:23px!important}
+.woocommerce form .form-row label{font-family:"Hurme-No3",sans-serif!important}
+.woocommerce form .form-row input.input-text,.woocommerce form .form-row textarea{border:solid 1px #999}
+.woocommerce form .form-row input.input-text,.woocommerce form .form-row textarea{border:solid 1px #999}
+.woocommerce table.shop_table th,.woocommerce table.shop_table td{font-family:"Hurme-No3",sans-serif!important}
+/*
+.woocommerce .products ul,.woocommerce ul.products{width:100%;margin:0}
+.woocommerce ul.products li.product,.woocommerce-page ul.products li.product{width:100%}
+*/
+
+.woocommerce-shop ul.products li.product:first-child {width: 100%;border: 6px solid #ffe400;padding: 4em 0;margin-top: 15%;}
+.woocommerce-shop ul.products li.product:first-child .woocommerce-LoopProduct-link{display: flex;flex-wrap: nowrap;justify-content: space-between;}
+/*.woocommerce ul.products li.first, .woocommerce-page ul.products li.first {width: 100%;border: 6px solid #ffe400;padding: 4em 0;}*/
+
+
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+
+    width: 45% !important;
+	
+	}
+	
