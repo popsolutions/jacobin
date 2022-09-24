@@ -1,5 +1,5 @@
 <?php
-function revista_seccion_notas($secc_id)
+function revista_seccion_notas($secc_id,$rev_cat)
 {
   $ret = '';
   switch ($secc_id) {
@@ -12,13 +12,11 @@ function revista_seccion_notas($secc_id)
       $textsec = 'ESPAÇO LIVRE DE TERRAPLANISMO';
       break;
   }
-
-  $revista_cat_id = get_field('revista_category_id');
   wp_reset_query();
   $the_query = new WP_Query(
     array(
       'posts_per_page' => 3,
-      'category__and' => array($secc_id, $revista_cat_id),
+      'category__and' => array($secc_id, $rev_cat),
       'order' => 'DESC',
       'limit' => 3
     )
@@ -140,8 +138,9 @@ function revista_seccion_notas($secc_id)
 
   <section class="revista-notas">
     <?php
-    echo revista_seccion_notas(1176);
-    echo revista_seccion_notas(1177);
+    $revista_cat_id = get_field('revista_category_id');
+    echo revista_seccion_notas(1176,$revista_cat_id);
+    echo revista_seccion_notas(1177,$revista_cat_id);
     ?>
   </section>
 
