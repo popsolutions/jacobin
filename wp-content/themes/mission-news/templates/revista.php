@@ -101,16 +101,16 @@
 
         <h3>Texto debajo del título</h3>
       </div>
-      <div class="columnas" style="margin: 0 auto; padding: 0px; width: 70%;">
+      <div class="columnas" style="margin: 0 auto; padding: 0px; width: 70%">
         <div class="columna1 soloTexto" style="float: left; margin: 0px; padding: 0px; width: 47%; margin-right: 30px;">
           <?php if (isset($secimg) && $secimg != '') { ?>
             <ul class="lcp_catlist" id="lcp_instance_0">
-              <li><a href="<?php $notas[2]['link'];?>" title="<?php $notas[2]['title'];?>"><img width="783" height="616" src="<?php echo $secimg; ?>" </a></li>
+              <li><a href="<?php echo $notas[2]['link'];?>" title="<?php echo $notas[2]['title'];?>"><img width="783" height="616" src="<?php echo $secimg; ?>"</a></li>
             </ul>
           <?php } ?>
         </div>
         <div class="columna2 soloimagen" style="float: left; margin: 0px; padding: 0px; width: 49%;">
-          <ul class="lcp_catlist" id="lcp_instance_0">
+          <ul class="lcp_catlist" id="lcp_instance_1">
             <?php
             foreach($notas as $nota){
               ?>
