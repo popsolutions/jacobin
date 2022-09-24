@@ -73,7 +73,7 @@
   wp_reset_query();
   $the_query = new WP_Query(
     array(
-      'posts_per_page' => 1,
+      'posts_per_page' => 3,
       'category__in' => array(1176, $revista_cat_id),
       'order' => 'DESC',
       'limit' => 3
