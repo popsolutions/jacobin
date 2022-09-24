@@ -1,22 +1,27 @@
 <div class="post-content">
   <ul class="encabezado-revista">
-    <li class="izq">Número 5</li>
-    <li class="cen"><a href="/loja/revista/ecologia-e-luta-de-classes/">Comprar</a></li>
-    <li class="der"><a href="assinar">assinar</a></li>
+    <li class="izq">Número <?php the_field('numero_atual'); ?></li>
+    <li class="cen"><a href="/loja/revista/<?php the_field('link_para_loja'); ?>">Comprar</a></li>
+    <li class="der"><a href="assinar">Assinar</a></li>
   </ul>
-  <h1 class="encabezado-revista">Ecologia e luta de classes</h1>
-  <figure class="wp-block-image size-large"><img width="1024" height="802" alt="" data-srcset="https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211-1024x802.jpg 1024w, https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211-300x235.jpg 300w, https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211-768x602.jpg 768w, https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211-600x470.jpg 600w, https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211.jpg 1280w" data-src="https://jacobin.com.br/wp-content/uploads/2022/04/msg-338186097-4211-1024x802.jpg" data-sizes="(max-width: 1024px) 100vw, 1024px" class="wp-image-21623 lazyloaded" src="https://jacobin.com.br/wp-content/uploads/2022/04/msg-338186097-4211-1024x802.jpg" sizes="(max-width: 1024px) 100vw, 1024px" srcset="https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211-1024x802.jpg 1024w, https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211-300x235.jpg 300w, https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211-768x602.jpg 768w, https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211-600x470.jpg 600w, https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211.jpg 1280w"><noscript><img width="1024" height="802" src="https://jacobin.com.br/wp-content/uploads/2022/04/msg-338186097-4211-1024x802.jpg" alt="" class="wp-image-21623" srcset="https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211-1024x802.jpg 1024w, https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211-300x235.jpg 300w, https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211-768x602.jpg 768w, https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211-600x470.jpg 600w, https://192.168.1.251/wp-content/uploads/2022/04/msg-338186097-4211.jpg 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /></noscript></figure>
+  <h1 class="encabezado-revista"><?php the_field('titulo'); ?></h1>
+  <?php
+$image = get_field('mockup');
+if (!empty($image)) {
+	$imgurl = $image['url'];
+  ?>
+  <img class="aligncenter size-full" src="<?php echo $imgurl;?>" alt="<?php the_field('titulo'); ?>">
+<?php }?>
 
 
-
-  <p class="acapite">“O ser humano vive da natureza. Isto significa que a natureza é seu corpo, com o qual ele precisa estar em processo contínuo para não morrer. Que a vida física e espiritual do ser humano está associada à natureza não tem outro sentido do que afirmar que a natureza está associada a si mesma, pois o ser humano é parte da natureza.” — KARL MARX</p>
+  <p class="acapite"><?php the_field('frase'); ?></p>
 
 
 
   <section class="hm-sb2">
     <div class="hm-sb__container comprar-digital">
       <header class="hm-sb__header">
-        <h2 class="hm-sb__heading"><a class="hm-sb__link" href="/loja/revista/ecologia-e-luta-de-classes/ ">COMPRAR ESTA VERSÃO AVULSA</a></h2>
+        <h2 class="hm-sb__heading"><a class="hm-sb__link" href="/loja/revista/<?php the_field('link_para_loja'); ?>">COMPRAR ESTA VERSÃO AVULSA</a></h2>
       </header>
     </div>
   </section>
