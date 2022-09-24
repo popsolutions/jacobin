@@ -6,11 +6,11 @@
   </ul>
   <h1 class="encabezado-revista"><?php the_field('titulo'); ?></h1>
   <?php
-$image = get_field('mockup');
-if (!empty($image)) {
+  $image = get_field('mockup');
+  if (!empty($image)) {
   ?>
-  <img class="aligncenter size-full" src="<?php echo esc_url($image);?>" alt="<?php the_field('titulo'); ?>">
-<?php }?>
+    <img class="aligncenter size-full" src="<?php echo esc_url($image); ?>" alt="<?php the_field('titulo'); ?>">
+  <?php } ?>
 
 
   <p class="acapite"><?php the_field('frase'); ?></p>
@@ -75,41 +75,18 @@ if (!empty($image)) {
       <h2>Especiais</h2>
     </div>
     <div class="columnas" style="margin: 0 auto; padding: 0px; width: 70%;">
-      <div class="columna1" style="float: left; margin: 0px; padding: 0px; width: 47%; margin-right: 30px;">
+      <div class="columna1 soloTexto" style="float: left; margin: 0px; padding: 0px; width: 47%; margin-right: 30px;">
         <ul class="lcp_catlist" id="lcp_instance_0">
-          <li><a href="https://192.168.1.251/2022/04/a-ofensiva-espoliadora-contra-a-amazonia-e-seus-povos/">A ofensiva espoliadora contra a Amazônia e seus povos</a><a href="https://192.168.1.251/author/brunomalheiro/" title="Bruno Malheiro, Carlos Walter e Fernando Michelotti">Bruno Malheiro, Carlos Walter e Fernando Michelotti</a><a href="https://192.168.1.251/2022/04/a-ofensiva-espoliadora-contra-a-amazonia-e-seus-povos/" title="A ofensiva espoliadora contra a Amazônia e seus povos"><img width="783" height="616" alt="A ofensiva espoliadora contra a Amazônia e seus povos" loading="lazy" data-src="https://192.168.1.251/wp-content/uploads/2022/04/Captura-de-Tela-2022-04-28-às-12.39.16-783x616.png" class="lcp_thumbnail wp-post-image lazyloaded" src="https://192.168.1.251/wp-content/uploads/2022/04/Captura-de-Tela-2022-04-28-às-12.39.16-783x616.png"><noscript><img width="783" height="616" src="https://192.168.1.251/wp-content/uploads/2022/04/Captura-de-Tela-2022-04-28-às-12.39.16-783x616.png" class="lcp_thumbnail wp-post-image" alt="A ofensiva espoliadora contra a Amazônia e seus povos" loading="lazy" /></noscript></a>
-            <div class="lcp_excerpt">O atual cenário revela de forma mais nítida as transformações recentes do Brasil em um laboratório liberal autoritário. Mas o processo de pilhagem dos recursos naturais também está ampliando as lutas e a radicalidade dos povos amazônicos. </div>
-          </li>
-          <li><a href="https://192.168.1.251/2022/05/a-natureza-da-luta/">A natureza da luta</a><a href="https://192.168.1.251/author/aline-klein/" title="Aline Klein">Aline Klein</a><a href="https://192.168.1.251/2022/05/a-natureza-da-luta/" title="A natureza da luta"><img width="783" height="616" alt="A natureza da luta" loading="lazy" data-src="https://192.168.1.251/wp-content/uploads/2022/05/Jacobin_04_mockup_plano_2-783x616.jpg" class="lcp_thumbnail wp-post-image lazyloaded" src="https://192.168.1.251/wp-content/uploads/2022/05/Jacobin_04_mockup_plano_2-783x616.jpg"><noscript><img width="783" height="616" src="https://192.168.1.251/wp-content/uploads/2022/05/Jacobin_04_mockup_plano_2-783x616.jpg" class="lcp_thumbnail wp-post-image" alt="A natureza da luta" loading="lazy" /></noscript></a>
-            <div class="lcp_excerpt">Por que ecologia sem uma perspectiva de classe, atenta ao povo que vive e trabalha na maior floresta do mundo, é pura jardinagem.</div>
-          </li>
-          <li><a href="https://192.168.1.251/2022/05/precisamos-de-voces/">Precisamos de vocês!</a><a href="https://192.168.1.251/author/guilhermeziggy/" title="Guilherme Ziggy">Guilherme Ziggy</a><a href="https://192.168.1.251/2022/05/precisamos-de-voces/" title="Precisamos de vocês!"><img width="783" height="616" alt="Precisamos de vocês!" loading="lazy" data-src="https://192.168.1.251/wp-content/uploads/2022/04/mockup-jacobin-2-783x616.jpg" class="lcp_thumbnail wp-post-image lazyloaded" src="https://192.168.1.251/wp-content/uploads/2022/04/mockup-jacobin-2-783x616.jpg"><noscript><img width="783" height="616" src="https://192.168.1.251/wp-content/uploads/2022/04/mockup-jacobin-2-783x616.jpg" class="lcp_thumbnail wp-post-image" alt="Precisamos de vocês!" loading="lazy" /></noscript></a>
-            <div class="lcp_excerpt">Publicar uma revista socialista no Brasil é um enorme desafio. Mas com o poder da luta coletiva podemos sobreviver e construir uma alternativa radical à mídia capitalista.</div>
-          </li>
-          <li><a href="https://192.168.1.251/2022/07/os-vandalos-do-apocalipse/">Os vândalos do apocalipse</a><a title="Rodrigo de Souza Wanzeler" class="molongui-disabled-link">Rodrigo de Souza Wanzeler</a><a href="https://192.168.1.251/2022/07/os-vandalos-do-apocalipse/" title="Os vândalos do apocalipse"><img width="783" height="616" alt="Os vândalos do apocalipse" loading="lazy" data-src="https://192.168.1.251/wp-content/uploads/2022/04/image00018-783x616.jpeg" class="lcp_thumbnail wp-post-image lazyloaded" src="https://192.168.1.251/wp-content/uploads/2022/04/image00018-783x616.jpeg"><noscript><img width="783" height="616" src="https://192.168.1.251/wp-content/uploads/2022/04/image00018-783x616.jpeg" class="lcp_thumbnail wp-post-image" alt="Os vândalos do apocalipse" loading="lazy" /></noscript></a>
-            <div class="lcp_excerpt">Como o poeta Bruno Menezes e o modernismo paraense marcaram a década de 1920 na Amazônia brasileira. <div class="woocommerce">
-                <div class="woocommerce-info wc-memberships-restriction-message wc-memberships-message wc-memberships-content-restricted-message">
-                  DESCULPE, MAS ESTE ARTIGO ESTÁ DISPONÍVEL SOMENTE PARA ASSINANTES. FAÇA <a href="/login">LOGIN</a> OU <a href="/assine/">TORNE-SE UM ASSINANTE</a>. </div>
-              </div>
-            </div>
-          </li>
-          <li><a href="https://192.168.1.251/2022/07/um-cometa-surrealista-rasgando-o-ceu-da-floresta/">Um cometa surrealista rasgando o céu da floresta</a><a title="Alex Januário e Rodrigo Qohen" class="molongui-disabled-link">Alex Januário e Rodrigo Qohen</a><a href="https://192.168.1.251/2022/07/um-cometa-surrealista-rasgando-o-ceu-da-floresta/" title="Um cometa surrealista rasgando o céu da floresta"><img width="783" height="556" alt="Um cometa surrealista rasgando o céu da floresta" loading="lazy" data-src="https://192.168.1.251/wp-content/uploads/2022/04/MjAxNjExMGFkYjYzZWRlYmY0ODI4MzBiMDg3YjMyOGZhODU4YWE-e1651034375187-783x556.jpg" class="lcp_thumbnail wp-post-image lazyloaded" src="https://192.168.1.251/wp-content/uploads/2022/04/MjAxNjExMGFkYjYzZWRlYmY0ODI4MzBiMDg3YjMyOGZhODU4YWE-e1651034375187-783x556.jpg"><noscript><img width="783" height="556" src="https://192.168.1.251/wp-content/uploads/2022/04/MjAxNjExMGFkYjYzZWRlYmY0ODI4MzBiMDg3YjMyOGZhODU4YWE-e1651034375187-783x556.jpg" class="lcp_thumbnail wp-post-image" alt="Um cometa surrealista rasgando o céu da floresta" loading="lazy" /></noscript></a>
-            <div class="lcp_excerpt">Benjamin Péret na zona tórrida do Brasil. <div class="woocommerce">
-                <div class="woocommerce-info wc-memberships-restriction-message wc-memberships-message wc-memberships-content-restricted-message">
-                  DESCULPE, MAS ESTE ARTIGO ESTÁ DISPONÍVEL SOMENTE PARA ASSINANTES. FAÇA <a href="/login">LOGIN</a> OU <a href="/assine/">TORNE-SE UM ASSINANTE</a>. </div>
-              </div>
-            </div>
-          </li>
-          <li><a href="https://192.168.1.251/2022/07/um-sindicalista-na-floresta/">Um sindicalista na floresta</a><a href="https://192.168.1.251/author/gomercindorodrigues/" title="Gomercindo Rodrigues">Gomercindo Rodrigues</a><a href="https://192.168.1.251/2022/07/um-sindicalista-na-floresta/" title="Um sindicalista na floresta"><img width="783" height="616" alt="Um sindicalista na floresta" loading="lazy" data-src="https://192.168.1.251/wp-content/uploads/2022/04/p080bcn7-783x616.jpg" class="lcp_thumbnail wp-post-image lazyloaded" src="https://192.168.1.251/wp-content/uploads/2022/04/p080bcn7-783x616.jpg"><noscript><img width="783" height="616" src="https://192.168.1.251/wp-content/uploads/2022/04/p080bcn7-783x616.jpg" class="lcp_thumbnail wp-post-image" alt="Um sindicalista na floresta" loading="lazy" /></noscript></a>
-            <div class="lcp_excerpt">A história do seringueiro que morreu ao defender a Amazônia e mudou o mundo. <div class="woocommerce">
-                <div class="woocommerce-info wc-memberships-restriction-message wc-memberships-message wc-memberships-content-restricted-message">
-                  DESCULPE, MAS ESTE ARTIGO ESTÁ DISPONÍVEL SOMENTE PARA ASSINANTES. FAÇA <a href="/login">LOGIN</a> OU <a href="/assine/">TORNE-SE UM ASSINANTE</a>. </div>
-              </div>
-            </div>
-          </li>
+          <li><a href="https://jacobinlat.com/2022/06/22/como-el-sol-cuando-amanece-yo-soy-libre/" class="sacar">Como el sol cuando amanece, yo soy libre</a><a href="https://jacobinlat.com/2022/06/22/como-el-sol-cuando-amanece-yo-soy-libre/" title="Como el sol cuando amanece, yo soy libre"><img width="783" height="616" src="https://jacobinlat.com/wp-content/uploads/2022/06/Screen-Shot-2022-06-26-at-2.14.17-PM-783x616.jpg.webp" class="lcp_thumbnail wp-post-image ewww_webp_loaded" alt="Como el sol cuando amanece, yo soy libre" loading="lazy" data-src-img="https://jacobinlat.com/wp-content/uploads/2022/06/Screen-Shot-2022-06-26-at-2.14.17-PM-783x616.jpg" data-src-webp="https://jacobinlat.com/wp-content/uploads/2022/06/Screen-Shot-2022-06-26-at-2.14.17-PM-783x616.jpg.webp" data-eio="j"><noscript><img width="783" height="616" src="https://jacobinlat.com/wp-content/uploads/2022/06/Screen-Shot-2022-06-26-at-2.14.17-PM-783x616.jpg" class="lcp_thumbnail wp-post-image" alt="Como el sol cuando amanece, yo soy libre" loading="lazy" /></noscript></a></li>
         </ul>
       </div>
-      <div class="columna2" style="float: left; margin: 0px; padding: 0px; width: 49%;"></div>
+      <div class="columna2 soloimagen" style="float: left; margin: 0px; padding: 0px; width: 49%;">
+        <ul class="lcp_catlist" id="lcp_instance_0">
+          <li><a href="https://jacobinlat.com/2022/06/22/sintomas-morbidos/" class="soloTexto">Síntomas mórbidos</a><a href="https://jacobinlat.com/author/martin-mosquera/" title="Martín Mosquera">Martín Mosquera</a></li>
+          <li><a href="https://jacobinlat.com/2022/06/22/como-el-sol-cuando-amanece-yo-soy-libre/" class="soloTexto">Como el sol cuando amanece, yo soy libre</a><a href="https://jacobinlat.com/author/pablo-stefanoni/" title="Pablo Stefanoni">Pablo Stefanoni</a></li>
+          <li><a href="https://jacobinlat.com/2022/06/25/volver-peores/" class="soloTexto">Volver peores</a><a href="https://jacobinlat.com/author/rafael-khachaturian/" title="Rafael Khachaturian">Rafael Khachaturian</a></li>
+        </ul>
+      </div>
     </div>
   </section>
 </div>
