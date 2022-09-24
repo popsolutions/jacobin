@@ -1,5 +1,5 @@
 <?php
-function revista_seccion_notas($secc_id, $rev_cat, $imgleft=1)
+function revista_seccion_notas($secc_id, $rev_cat, $imgleft = 1)
 {
   $textsec = '';
   $ret = '';
@@ -52,28 +52,28 @@ function revista_seccion_notas($secc_id, $rev_cat, $imgleft=1)
     <h3>' . $textsec . '</h3>
   </div>
   <div class="columnas" style="margin: 0 auto; padding: 0px; width: 70%">';
-  $ret_image='
+    $ret_image = '
     <div class="columna1 soloTexto" style="float: left; margin: 0px; padding: 0px; width: 47%; margin-right: 30px;">';
     if (isset($secimg) && $secimg != '') {
-      $ret_image.= '<ul class="lcp_catlist" id="lcp_instance_0">
+      $ret_image .= '<ul class="lcp_catlist" id="lcp_instance_0">
           <li><a href="' . $notas[2]['link'] . '" title="' . $notas[2]['title'] . '">' . $secimg . '</a></li>
         </ul>';
     }
-    $ret_image.='</div>';
-    $ret_text='
+    $ret_image .= '</div>';
+    $ret_text = '
     <div class="columna2 soloimagen" style="float: left; margin: 0px; padding: 0px; width: 49%;">
       <ul class="lcp_catlist" id="lcp_instance_0">';
 
     foreach ($notas as $nota) {
-      $ret_text.= '
+      $ret_text .= '
           <li><a href="' . $nota['link'] . '" class="soloTexto">' . $nota['title'] . '</a>' . $nota['author'] . '</li>';
     }
     $ret_text .= '
         </ul>
     </div>
     ';
-    $ret.= ($imgleft == 1) ? $ret_image.$ret_text : $ret_text.$ret_image;
-    $ret.= '
+    $ret .= ($imgleft == 1) ? $ret_image . $ret_text : $ret_text . $ret_image;
+    $ret .= '
   </div>
   <div style="float: none; clear: both;"></div>';
   }
@@ -153,14 +153,14 @@ function revista_seccion_notas($secc_id, $rev_cat, $imgleft=1)
   <section class="revista-notas">
     <?php
     $revista_cat_id = get_field('revista_category_id');
-    echo revista_seccion_notas(1176, $revista_cat_id);
+    echo revista_seccion_notas(1176, $revista_cat_id,2);
     ?>
     <div class="rev_amar">
-      <?php echo revista_seccion_notas(1177, $revista_cat_id,0);?>
+      <?php echo revista_seccion_notas(1177, $revista_cat_id, 1, 0); ?>
     </div>
-    <?php echo revista_seccion_notas(1178, $revista_cat_id);?>
+    <?php echo revista_seccion_notas(1178, $revista_cat_id,1); ?>
     <div class="rev_amar">
-    <?php echo revista_seccion_notas(1180, $revista_cat_id,0);?>
+      <?php echo revista_seccion_notas(1180, $revista_cat_id, 1,0); ?>
     </div>
   </section>
 
