@@ -70,12 +70,11 @@
 
   <?php
   $revista_cat_id = the_field('revista_category_id');
-  echo '<br>RevID:'.$revista_cat_id;
   wp_reset_query();
   $the_query = new WP_Query(
     array(
       'posts_per_page' => 3,
-      'category__in' => array(1176, 1227),
+      'category__and' => array(1176, $revista_cat_id),
       'order' => 'DESC',
       'limit' => 3
     )
@@ -87,6 +86,8 @@
       $the_query->the_post();
       $notas[$conta]['title'] = get_the_title();
       $notas[$conta]['link'] =  get_permalink();
+      $notas[$conta]['author'] =  get_the_author();
+      $notas[$conta]['authorlink'] =  get_the_author_posts_link();
       if ($conta == 2) {
         $secimg = get_the_post_thumbnail(get_the_ID(), 'full');
       }
@@ -104,15 +105,17 @@
         <div class="columna1 soloTexto" style="float: left; margin: 0px; padding: 0px; width: 47%; margin-right: 30px;">
           <?php if (isset($secimg) && $secimg != '') { ?>
             <ul class="lcp_catlist" id="lcp_instance_0">
-              <li><a href="https://jacobinlat.com/2022/06/22/como-el-sol-cuando-amanece-yo-soy-libre/" title="Como el sol cuando amanece, yo soy libre"><img width="783" height="616" src="<?php echo $secimg; ?>" </a></li>
+              <li><a href="<?php $notas[2]['link'];?>" title="<?php $notas[2]['title'];?>"><img width="783" height="616" src="<?php echo $secimg; ?>" </a></li>
             </ul>
           <?php } ?>
         </div>
         <div class="columna2 soloimagen" style="float: left; margin: 0px; padding: 0px; width: 49%;">
           <ul class="lcp_catlist" id="lcp_instance_0">
-            <li><a href="https://jacobinlat.com/2022/06/22/sintomas-morbidos/" class="soloTexto">Síntomas mórbidos</a><a href="https://jacobinlat.com/author/martin-mosquera/" title="Martín Mosquera">Martín Mosquera</a></li>
-            <li><a href="https://jacobinlat.com/2022/06/22/como-el-sol-cuando-amanece-yo-soy-libre/" class="soloTexto">Como el sol cuando amanece, yo soy libre</a><a href="https://jacobinlat.com/author/pablo-stefanoni/" title="Pablo Stefanoni">Pablo Stefanoni</a></li>
-            <li><a href="https://jacobinlat.com/2022/06/25/volver-peores/" class="soloTexto">Volver peores</a><a href="https://jacobinlat.com/author/rafael-khachaturian/" title="Rafael Khachaturian">Rafael Khachaturian</a></li>
+            <?php
+            foreach($notas as $nota){
+              ?>
+              <li><a href="<?php echo $nota['link'];?>" class="soloTexto"><?php echo $nota['title'];?></a><a href="<?php echo $nota['authorlink'];?>" title="<?php echo $nota['author'];?>"><?php echo $nota['author'];?></a></li>
+            <?php }?>
           </ul>
         </div>
       </div>
