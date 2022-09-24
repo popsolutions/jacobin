@@ -8,9 +8,8 @@
   <?php
 $image = get_field('mockup');
 if (!empty($image)) {
-	$imgurl = $image['url'];
   ?>
-  <img class="aligncenter size-full" src="<?php echo $imgurl;?>" alt="<?php the_field('titulo'); ?>">
+  <img class="aligncenter size-full" src="<?php echo esc_url($image);?>" alt="<?php the_field('titulo'); ?>">
 <?php }?>
 
 
