@@ -110,7 +110,7 @@
           <?php } ?>
         </div>
         <div class="columna2 soloimagen" style="float: left; margin: 0px; padding: 0px; width: 49%;">
-          <ul class="lcp_catlist" id="lcp_instance_1">
+          <ul class="lcp_catlist" id="lcp_instance_0">
             <?php
             foreach($notas as $nota){
               ?>
@@ -119,6 +119,7 @@
           </ul>
         </div>
       </div>
+      <div style="float: none; clear: both;"></div>
     </section>
   <?php } ?>
 </div>
