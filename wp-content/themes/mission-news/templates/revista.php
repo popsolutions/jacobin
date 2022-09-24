@@ -7,10 +7,10 @@ function revista_seccion_notas($secc_id)
       $nomsec = 'Armas da crítica';
       $textsec = 'NÃO HÁ MELHOR DEFESA DO QUE UM BOM ATAQUE';
       break;
-      case 1177:
-        $nomsec = 'Capital Cultural';
-        $textsec = 'ESPAÇO LIVRE DE TERRAPLANISMO';
-        break;
+    case 1177:
+      $nomsec = 'Capital Cultural';
+      $textsec = 'ESPAÇO LIVRE DE TERRAPLANISMO';
+      break;
   }
 
   $revista_cat_id = get_field('revista_category_id');
@@ -23,6 +23,7 @@ function revista_seccion_notas($secc_id)
       'limit' => 3
     )
   );
+  print_r($the_query);
   if ($the_query->have_posts()) {
     $notas = array();
     $conta = 1;
