@@ -69,7 +69,7 @@
   </section>
 
   <?php
-  $revista_cat_id = the_field('link_para_loja');
+  $revista_cat_id = the_field('revista_category_id');
   wp_reset_query();
   $the_query = new WP_Query(
     array(
