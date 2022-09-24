@@ -1,5 +1,5 @@
 <?php
-function revista_seccion_notas($secc_id, $rev_cat, $imgleft = 1)
+function revista_seccion_notas($secc_id, $rev_cat, $photonum,$imgleft = 1)
 {
   $textsec = '';
   $ret = '';
@@ -56,7 +56,7 @@ function revista_seccion_notas($secc_id, $rev_cat, $imgleft = 1)
     <div class="columna1 soloTexto" style="float: left; margin: 0px; padding: 0px; width: 47%; margin-right: 30px;">';
     if (isset($secimg) && $secimg != '') {
       $ret_image .= '<ul class="lcp_catlist" id="lcp_instance_0">
-          <li><a href="' . $notas[2]['link'] . '" title="' . $notas[2]['title'] . '">' . $secimg . '</a></li>
+          <li><a href="' . $notas[$photonum]['link'] . '" title="' . $notas[$photonum]['title'] . '">' . $secimg . '</a></li>
         </ul>';
     }
     $ret_image .= '</div>';
