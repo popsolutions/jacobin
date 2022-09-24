@@ -86,14 +86,14 @@
       $the_query->the_post();
       $notas[$conta]['title'] = get_the_title();
       $notas[$conta]['link'] =  get_permalink();
-      $notas[$conta]['author'] =  get_the_author();
-      $notas[$conta]['authorlink'] =  get_the_author_posts_link();
+      //$notas[$conta]['author'] =  get_the_author();
+      $notas[$conta]['author'] =  get_the_author_posts_link();
       if ($conta == 2) {
         $secimg = get_the_post_thumbnail(get_the_ID(), 'full');
       }
       $conta++;
     }
-    print_r($notas);
+    //print_r($notas);
   ?>
     <section class="revista-notas">
       <div class="seccion">
@@ -114,7 +114,7 @@
             <?php
             foreach($notas as $nota){
               ?>
-              <li><a href="<?php echo $nota['link'];?>" class="soloTexto"><?php echo $nota['title'];?></a><a href="<?php echo $nota['authorlink'];?>" title="<?php echo $nota['author'];?>"><?php echo $nota['author'];?></a></li>
+              <li><a href="<?php echo $nota['link'];?>" class="soloTexto"><?php echo $nota['title'];?></a><?php echo $nota['author'];?></li>
             <?php }?>
           </ul>
         </div>
