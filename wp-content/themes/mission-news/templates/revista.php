@@ -70,11 +70,12 @@
 
   <?php
   $revista_cat_id = the_field('revista_category_id');
+  echo '<br>RevID:'.$revista_cat_id;
   wp_reset_query();
   $the_query = new WP_Query(
     array(
       'posts_per_page' => 3,
-      'category__in' => array(1176, $revista_cat_id),
+      'category__in' => array(1176, 1227),
       'order' => 'DESC',
       'limit' => 3
     )
