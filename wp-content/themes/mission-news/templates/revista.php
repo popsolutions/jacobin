@@ -1,3 +1,72 @@
+<?php
+function revista_seccion_notas($secc_id)
+{
+  $ret = '';
+  switch ($secc_id) {
+    case 1176:
+      $nomsec = 'Armas da crítica';
+      $textsec = 'NÃO HÁ MELHOR DEFESA DO QUE UM BOM ATAQUE';
+      break;
+      case 1177:
+        $nomsec = 'Capital Cultural';
+        $textsec = 'ESPAÇO LIVRE DE TERRAPLANISMO';
+        break;
+  }
+
+  $revista_cat_id = get_field('revista_category_id');
+  wp_reset_query();
+  $the_query = new WP_Query(
+    array(
+      'posts_per_page' => 3,
+      'category__and' => array($secc_id, $revista_cat_id),
+      'order' => 'DESC',
+      'limit' => 3
+    )
+  );
+  if ($the_query->have_posts()) {
+    $notas = array();
+    $conta = 1;
+    while ($the_query->have_posts()) {
+      $the_query->the_post();
+      $notas[$conta]['title'] = get_the_title();
+      $notas[$conta]['link'] =  get_permalink();
+      //$notas[$conta]['author'] =  get_the_author();
+      $notas[$conta]['author'] =  get_the_author_posts_link();
+      if ($conta == 2) {
+        $secimg = get_the_post_thumbnail(get_the_ID(), 'full');
+      }
+      $conta++;
+    }
+    //print_r($notas);
+    $ret = '
+  <div class="seccion">
+    <h2>' . $nomsec . '</h2>
+    <h3>' . $textsec . '</h3>
+  </div>
+  <div class="columnas" style="margin: 0 auto; padding: 0px; width: 70%">
+    <div class="columna1 soloTexto" style="float: left; margin: 0px; padding: 0px; width: 47%; margin-right: 30px;">';
+    if (isset($secimg) && $secimg != '') {
+      $ret .= '<ul class="lcp_catlist" id="lcp_instance_0">
+          <li><a href="' . $notas[2]['link'] . '" title="' . $notas[2]['title'] . '">' . $secimg . '</a></li>
+        </ul>';
+    }
+    $ret .= '</div>
+    <div class="columna2 soloimagen" style="float: left; margin: 0px; padding: 0px; width: 49%;">
+      <ul class="lcp_catlist" id="lcp_instance_0">';
+
+    foreach ($notas as $nota) {
+      $ret .= '
+          <li><a href="' . $nota['link'] . '" class="soloTexto">' . $nota['title'] . '</a>' . $nota['author'] . '</li>';
+    }
+    $ret .= '
+        </ul>
+    </div>
+  </div>
+  <div style="float: none; clear: both;"></div>';
+  }
+  return $ret;
+}
+?>
 <div class="post-content">
   <ul class="encabezado-revista">
     <li class="izq">Número <?php the_field('numero_atual'); ?></li>
@@ -68,58 +137,11 @@
     </div>
   </section>
 
-  <?php
-  $revista_cat_id = get_field('revista_category_id');
-  wp_reset_query();
-  $the_query = new WP_Query(
-    array(
-      'posts_per_page' => 3,
-      'category__and' => array(1176, $revista_cat_id),
-      'order' => 'DESC',
-      'limit' => 3
-    )
-  );
-  if ($the_query->have_posts()) {
-    $notas = array();
-    $conta = 1;
-    while ($the_query->have_posts()) {
-      $the_query->the_post();
-      $notas[$conta]['title'] = get_the_title();
-      $notas[$conta]['link'] =  get_permalink();
-      //$notas[$conta]['author'] =  get_the_author();
-      $notas[$conta]['author'] =  get_the_author_posts_link();
-      if ($conta == 2) {
-        $secimg = get_the_post_thumbnail(get_the_ID(), 'full');
-      }
-      $conta++;
-    }
-    //print_r($notas);
-  ?>
-    <section class="revista-notas">
-      <div class="seccion">
-        <h2>Armas da crítica</h2>
+  <section class="revista-notas">
+    <?php
+    echo revista_seccion_notas(1176);
+    echo revista_seccion_notas(1177);
+    ?>
+  </section>
 
-        <h3>Texto debajo del título</h3>
-      </div>
-      <div class="columnas" style="margin: 0 auto; padding: 0px; width: 70%">
-        <div class="columna1 soloTexto" style="float: left; margin: 0px; padding: 0px; width: 47%; margin-right: 30px;">
-          <?php if (isset($secimg) && $secimg != '') { ?>
-            <ul class="lcp_catlist" id="lcp_instance_0">
-              <li><a href="<?php echo $notas[2]['link'];?>" title="<?php echo $notas[2]['title'];?>"><?php echo $secimg; ?></a></li>
-            </ul>
-          <?php } ?>
-        </div>
-        <div class="columna2 soloimagen" style="float: left; margin: 0px; padding: 0px; width: 49%;">
-          <ul class="lcp_catlist" id="lcp_instance_0">
-            <?php
-            foreach($notas as $nota){
-              ?>
-              <li><a href="<?php echo $nota['link'];?>" class="soloTexto"><?php echo $nota['title'];?></a><?php echo $nota['author'];?></li>
-            <?php }?>
-          </ul>
-        </div>
-      </div>
-      <div style="float: none; clear: both;"></div>
-    </section>
-  <?php } ?>
 </div>
