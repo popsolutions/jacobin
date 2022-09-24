@@ -1,6 +1,7 @@
 <?php
-function revista_seccion_notas($secc_id,$rev_cat)
+function revista_seccion_notas($secc_id, $rev_cat, $imgleft=1)
 {
+  $textsec = '';
   $ret = '';
   switch ($secc_id) {
     case 1176:
@@ -10,6 +11,14 @@ function revista_seccion_notas($secc_id,$rev_cat)
     case 1177:
       $nomsec = 'Capital Cultural';
       $textsec = 'ESPAÇO LIVRE DE TERRAPLANISMO';
+      break;
+    case 1178:
+      $nomsec = 'Casa Grande';
+      $textsec = '';
+      break;
+    case 1180:
+      $nomsec = 'Linha da Frente';
+      $textsec = 'BARRICADAS CORTAM RUAS, MAS ABRE CAMINOS';
       break;
   }
   wp_reset_query();
@@ -21,7 +30,7 @@ function revista_seccion_notas($secc_id,$rev_cat)
       'limit' => 3
     )
   );
-  print_r($the_query);
+  //print_r($the_query);
   if ($the_query->have_posts()) {
     $notas = array();
     $conta = 1;
@@ -42,24 +51,29 @@ function revista_seccion_notas($secc_id,$rev_cat)
     <h2>' . $nomsec . '</h2>
     <h3>' . $textsec . '</h3>
   </div>
-  <div class="columnas" style="margin: 0 auto; padding: 0px; width: 70%">
+  <div class="columnas" style="margin: 0 auto; padding: 0px; width: 70%">';
+  $ret_image='
     <div class="columna1 soloTexto" style="float: left; margin: 0px; padding: 0px; width: 47%; margin-right: 30px;">';
     if (isset($secimg) && $secimg != '') {
-      $ret .= '<ul class="lcp_catlist" id="lcp_instance_0">
+      $ret_image.= '<ul class="lcp_catlist" id="lcp_instance_0">
           <li><a href="' . $notas[2]['link'] . '" title="' . $notas[2]['title'] . '">' . $secimg . '</a></li>
         </ul>';
     }
-    $ret .= '</div>
+    $ret_image.='</div>';
+    $ret_text='
     <div class="columna2 soloimagen" style="float: left; margin: 0px; padding: 0px; width: 49%;">
       <ul class="lcp_catlist" id="lcp_instance_0">';
 
     foreach ($notas as $nota) {
-      $ret .= '
+      $ret_text.= '
           <li><a href="' . $nota['link'] . '" class="soloTexto">' . $nota['title'] . '</a>' . $nota['author'] . '</li>';
     }
-    $ret .= '
+    $ret_text .= '
         </ul>
     </div>
+    ';
+    $ret.= ($imgleft == 1) ? $ret_image.$ret_text : $ret_text.$ret_image;
+    $ret.= '
   </div>
   <div style="float: none; clear: both;"></div>';
   }
@@ -139,9 +153,15 @@ function revista_seccion_notas($secc_id,$rev_cat)
   <section class="revista-notas">
     <?php
     $revista_cat_id = get_field('revista_category_id');
-    echo revista_seccion_notas(1176,$revista_cat_id);
-    echo revista_seccion_notas(1177,$revista_cat_id);
+    echo revista_seccion_notas(1176, $revista_cat_id);
     ?>
+    <div class="rev_amar">
+      <?php echo revista_seccion_notas(1177, $revista_cat_id,0);?>
+    </div>
+    <?php echo revista_seccion_notas(1178, $revista_cat_id);?>
+    <div class="rev_amar">
+    <?php echo revista_seccion_notas(1180, $revista_cat_id,0);?>
+    </div>
   </section>
 
 </div>
