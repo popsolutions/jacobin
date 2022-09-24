@@ -68,25 +68,53 @@
     </div>
   </section>
 
+  <?php
+  $revista_cat_id = the_field('link_para_loja');
+  wp_reset_query();
+  $the_query = new WP_Query(
+    array(
+      'posts_per_page' => 1,
+      'category__in' => array(1176, $revista_cat_id),
+      'order' => 'DESC',
+      'limit' => 3
+    )
+  );
+  if ($the_query->have_posts()) {
+    $notas = array();
+    $conta = 1;
+    while ($the_query->have_posts()) {
+      $the_query->the_post();
+      $notas[$conta]['title'] = get_the_title();
+      $notas[$conta]['link'] =  get_permalink();
+      if ($conta == 2) {
+        $secimg = get_the_post_thumbnail(get_the_ID(), 'full');
+      }
+      $conta++;
+    }
+    print_r($notas);
+  ?>
+    <section class="revista-notas">
+      <div class="seccion">
+        <h2>Armas da crítica</h2>
 
-
-  <section class="revista-notas">
-    <div class="seccion">
-      <h2>Especiais</h2>
-    </div>
-    <div class="columnas" style="margin: 0 auto; padding: 0px; width: 70%;">
-      <div class="columna1 soloTexto" style="float: left; margin: 0px; padding: 0px; width: 47%; margin-right: 30px;">
-        <ul class="lcp_catlist" id="lcp_instance_0">
-          <li><a href="https://jacobinlat.com/2022/06/22/como-el-sol-cuando-amanece-yo-soy-libre/" class="sacar">Como el sol cuando amanece, yo soy libre</a><a href="https://jacobinlat.com/2022/06/22/como-el-sol-cuando-amanece-yo-soy-libre/" title="Como el sol cuando amanece, yo soy libre"><img width="783" height="616" src="https://jacobinlat.com/wp-content/uploads/2022/06/Screen-Shot-2022-06-26-at-2.14.17-PM-783x616.jpg.webp" class="lcp_thumbnail wp-post-image ewww_webp_loaded" alt="Como el sol cuando amanece, yo soy libre" loading="lazy" data-src-img="https://jacobinlat.com/wp-content/uploads/2022/06/Screen-Shot-2022-06-26-at-2.14.17-PM-783x616.jpg" data-src-webp="https://jacobinlat.com/wp-content/uploads/2022/06/Screen-Shot-2022-06-26-at-2.14.17-PM-783x616.jpg.webp" data-eio="j"><noscript><img width="783" height="616" src="https://jacobinlat.com/wp-content/uploads/2022/06/Screen-Shot-2022-06-26-at-2.14.17-PM-783x616.jpg" class="lcp_thumbnail wp-post-image" alt="Como el sol cuando amanece, yo soy libre" loading="lazy" /></noscript></a></li>
-        </ul>
+        <h3>Texto debajo del título</h3>
       </div>
-      <div class="columna2 soloimagen" style="float: left; margin: 0px; padding: 0px; width: 49%;">
-        <ul class="lcp_catlist" id="lcp_instance_0">
-          <li><a href="https://jacobinlat.com/2022/06/22/sintomas-morbidos/" class="soloTexto">Síntomas mórbidos</a><a href="https://jacobinlat.com/author/martin-mosquera/" title="Martín Mosquera">Martín Mosquera</a></li>
-          <li><a href="https://jacobinlat.com/2022/06/22/como-el-sol-cuando-amanece-yo-soy-libre/" class="soloTexto">Como el sol cuando amanece, yo soy libre</a><a href="https://jacobinlat.com/author/pablo-stefanoni/" title="Pablo Stefanoni">Pablo Stefanoni</a></li>
-          <li><a href="https://jacobinlat.com/2022/06/25/volver-peores/" class="soloTexto">Volver peores</a><a href="https://jacobinlat.com/author/rafael-khachaturian/" title="Rafael Khachaturian">Rafael Khachaturian</a></li>
-        </ul>
+      <div class="columnas" style="margin: 0 auto; padding: 0px; width: 70%;">
+        <div class="columna1 soloTexto" style="float: left; margin: 0px; padding: 0px; width: 47%; margin-right: 30px;">
+          <?php if (isset($secimg) && $secimg != '') { ?>
+            <ul class="lcp_catlist" id="lcp_instance_0">
+              <li><a href="https://jacobinlat.com/2022/06/22/como-el-sol-cuando-amanece-yo-soy-libre/" title="Como el sol cuando amanece, yo soy libre"><img width="783" height="616" src="<?php echo $secimg; ?>" </a></li>
+            </ul>
+          <?php } ?>
+        </div>
+        <div class="columna2 soloimagen" style="float: left; margin: 0px; padding: 0px; width: 49%;">
+          <ul class="lcp_catlist" id="lcp_instance_0">
+            <li><a href="https://jacobinlat.com/2022/06/22/sintomas-morbidos/" class="soloTexto">Síntomas mórbidos</a><a href="https://jacobinlat.com/author/martin-mosquera/" title="Martín Mosquera">Martín Mosquera</a></li>
+            <li><a href="https://jacobinlat.com/2022/06/22/como-el-sol-cuando-amanece-yo-soy-libre/" class="soloTexto">Como el sol cuando amanece, yo soy libre</a><a href="https://jacobinlat.com/author/pablo-stefanoni/" title="Pablo Stefanoni">Pablo Stefanoni</a></li>
+            <li><a href="https://jacobinlat.com/2022/06/25/volver-peores/" class="soloTexto">Volver peores</a><a href="https://jacobinlat.com/author/rafael-khachaturian/" title="Rafael Khachaturian">Rafael Khachaturian</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  <?php } ?>
 </div>
