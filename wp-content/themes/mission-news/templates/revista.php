@@ -40,7 +40,7 @@ function revista_seccion_notas($secc_id, $rev_cat, $photonum,$imgleft = 1)
       $notas[$conta]['link'] =  get_permalink();
       //$notas[$conta]['author'] =  get_the_author();
       $notas[$conta]['author'] =  get_the_author_posts_link();
-      if ($conta == 2) {
+      if ($conta == $photonum) {
         $secimg = get_the_post_thumbnail(get_the_ID(), 'full');
       }
       $conta++;
