@@ -52,6 +52,7 @@
 
 	<article class="content-page">
 		<?php ct_mission_news_featured_image(); ?>
+		<?php echo 'Parent ID: '. $post->post_parent;?>
 		<?php if (is_page(21566)) {  // REVISTA 
 			include("templates/revista.php");
 		?>
