@@ -67,6 +67,9 @@ if ( ! function_exists( ( 'ct_mission_news_post_layout_callback' ) ) ) {
 				<option value="no-sidebar-full-width" <?php selected($layout == 'no-sidebar-full-width'); ?>>
 					<?php esc_html_e( 'No sidebar - full-width', 'mission-news' ); ?>
 				</option>
+				<option value="revista" <?php selected($layout == 'revista'); ?>>
+					<?php esc_html_e( 'Revista', 'mission-news' ); ?>
+				</option>
 			</select>
 		</p> <?php
 	}
