@@ -5,22 +5,23 @@ function revista_seccion_notas($secc_id, $rev_cat, $photonum,$imgleft = 1)
   $ret = '';
   switch ($secc_id) {
     case 1176:
-      $nomsec = 'Armas da crítica';
+      //$nomsec = 'Armas da crítica';
       $textsec = 'NÃO HÁ MELHOR DEFESA DO QUE UM BOM ATAQUE';
       break;
     case 1177:
-      $nomsec = 'Capital Cultural';
+      //$nomsec = 'Capital Cultural';
       $textsec = 'ESPAÇO LIVRE DE TERRAPLANISMO';
       break;
     case 1178:
-      $nomsec = 'Casa Grande';
+      //$nomsec = 'Casa Grande';
       $textsec = '';
       break;
     case 1180:
-      $nomsec = 'Linha da Frente';
+      //$nomsec = 'Linha de Frente';
       $textsec = 'BARRICADAS CORTAM RUAS, MAS ABRE CAMINOS';
       break;
   }
+  $nomsec = get_cat_name($secc_id);
   wp_reset_query();
   $the_query = new WP_Query(
     array(
