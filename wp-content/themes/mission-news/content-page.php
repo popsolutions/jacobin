@@ -52,7 +52,7 @@
 
 	<article class="content-page">
 		<?php ct_mission_news_featured_image(); ?>
-		<?php if (is_page(21566)) {  // REVISTA 
+		<?php if(is_page_template('revista.php')){  // REVISTA 
 			include("templates/revista.php");
 		?>
 		<?php } else { ?>
