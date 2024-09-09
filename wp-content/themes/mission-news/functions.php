@@ -1101,5 +1101,12 @@ function ct_mission_news_register_elementor_locations( $elementor_theme_manager 
 }
 add_action( 'elementor/theme/register_locations', 'ct_mission_news_register_elementor_locations' );
 
+//----------------------------------------------------
+// Add support to epub type
+//----------------------------------------------------
+function custom_mime_types($mimes) {
+	$mimes['epub'] = 'application/epub+zip';
+	return $mimes;
+}
+add_filter('upload_mimes', 'custom_mime_types');
 
- 
